@@ -92,24 +92,6 @@
   }
 }
 
-@-webkit-keyframes hoverPulse {
-  50% {
-    font-size: 3.6rem;
-  }
-  100% {
-    font-size: 3.5rem;
-  }
-}
-
-@keyframes hoverPulse {
-  50% {
-    font-size: 3.6rem;
-  }
-  100% {
-    font-size: 3.5rem;
-  }
-}
-
 *,
 *::after,
 *::before {
@@ -171,11 +153,13 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 2px;
+  -webkit-transition: ease-out .2s;
+  transition: ease-out .2s;
 }
 
 .heading-secondary:hover {
-  -webkit-animation: hoverPulse .5s ease-in-out;
-          animation: hoverPulse .5s ease-in-out;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
@@ -294,6 +278,50 @@ body {
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
+}
+
+.composition {
+  position: relative;
+}
+
+.composition__photo {
+  width: 55%;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  -webkit-transition: ease-out .2s;
+  transition: ease-out .2s;
+  outline-offset: 1.5rem;
+}
+
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}
+
+.composition__photo:hover {
+  outline: 1rem solid #55c57a;
+  -webkit-transform: scale(1.05) translateY(-0.5rem);
+          transform: scale(1.05) translateY(-0.5rem);
+  -webkit-box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.composition:hover .composition__photo:not(:hover) {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .row {

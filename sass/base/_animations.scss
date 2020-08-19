@@ -41,13 +41,3 @@
         transform: translate(0);
     }
 }
-
-@keyframes hoverPulse {
-    50% {
-        font-size: 3.6rem;
-    }
-
-    100% {
-        font-size: 3.5rem;
-    }
-}
