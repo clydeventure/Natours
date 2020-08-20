@@ -52,6 +52,16 @@
             color: $color-grey-dark;
         }
     }
+
+    &--green {
+        background-color: $primary-color;
+        color: $color-white;
+
+        &::after {
+            background-color: $primary-color;
+            color: $color-white;
+        }
+    }
     
 }
 
